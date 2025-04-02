@@ -9,7 +9,11 @@ function App() {
     reset,
     formState: { errors }
   } = useForm({
-    mode: "onBlur"
+    mode: "onBlur",
+    defaultValues: {
+      priority: "Basse",
+      isCompleted: false
+    }
   });
 
   const onSubmit = (data) => {
