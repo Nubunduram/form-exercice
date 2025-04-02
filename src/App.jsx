@@ -17,7 +17,7 @@ const schema = yup.object().shape({
       if (!value) return false;
       const [day, month, year] = value.split("/").map(Number);
       const inputDate = new Date(year, month - 1, day);
-      return inputDate >= new Date();
+      return inputDate >= new Date().setHours(0, 0, 0, 0);
     })
     .required("La date est obligatoire"),
   priority: yup
